@@ -4,3 +4,6 @@ build/
 .vscode
 *.code-workspace
 CMakeFiles/
+CMakeCache.txt
+CMakeLists.txt
+cmake_install.cmake
