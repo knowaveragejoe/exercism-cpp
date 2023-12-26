@@ -7,21 +7,26 @@
 namespace allergies {
   class allergy_test {
     public:
+      int allergy_score;
       allergy_test(int score);
 
       bool is_allergic_to(std::string);
 
       std::unordered_set<std::string> get_allergies();
-
-      void set_allergy(std::string food);
     private:
-      int allergy_score;
+      const std::map<std::string, int> food_scores{
+        {"eggs", 1},
+        {"peanuts", 2},
+        {"shellfish", 4},
+        {"strawberries", 8},
+        {"tomatoes", 16},
+        {"chocolate", 32},
+        {"pollen", 64},
+        {"cats", 128}
+      };
 
-      const std::map<std::string, int> food_scores;
+      std::unordered_set<std::string> allergy_names{};
 
-      std::unordered_set<std::string> allergy_names;
-
-      int get_allergy_score_for_food(std::string food);
   };
 }  // namespace allergies
 
